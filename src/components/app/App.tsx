@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
-import OpenFiles from './OpenFiles';
-import Tier from './Tier';
-import FileList from './FileList';
-import TierList from './TierList';
+import OpenFiles from '../OpenFiles';
+import FileList from '../FileList';
+import TierList from '../TierList';
+import { useDirectory } from './useDirectory';
 
 export class TierData {
   id: string
@@ -47,30 +47,25 @@ export const LEFT_DISLOCATION_TIER_DATA: TierData[] = [
 ];
 
 function App() {
-  const [files, setFiles] = useState<File[]>([]);
+  const {
+    directory, openFilesHandler, addTiersAndDownload,
+  } = useDirectory();
   const [tiers, setTiers] = useState<TierData[]>(INITIAL_TIER_DATA);
-
-  function openFilesHandler(e: ChangeEvent<HTMLInputElement>) {
-    e.preventDefault();
-    const openedFiles = e.target.files;
-
-    if (openedFiles != null) {
-      const openedFilesArray = Array.from(openedFiles);
-      setFiles([...files, ...openedFilesArray]);
-    }
-  }
-
-  function addTiersToFile(file: File, tier: TierData) {
-    alert(file.text());
-    return null;
-  }
 
   return (
     <div>
       <h1>Add Exmaralda Tiers</h1>
       <OpenFiles openFilesHandler={openFilesHandler} />
-      <FileList fileNames={files.map((file) => file.name)} />
-      <TierList tiers={tiers} setTiers={setTiers} />
+      <div className="cols">
+        <FileList directory={directory} />
+        <button
+          type="button"
+          onClick={() => addTiersAndDownload(tiers)}
+        >
+          Add Tiers and Download
+        </button>
+        <TierList tiers={tiers} setTiers={setTiers} />
+      </div>
     </div>
   );
 }

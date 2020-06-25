@@ -1,5 +1,5 @@
 import React from 'react';
-import { LEFT_DISLOCATION_TIER_DATA, REFERENT_ANNOTATION_TIER_DATA, TierData } from './App';
+import { LEFT_DISLOCATION_TIER_DATA, REFERENT_ANNOTATION_TIER_DATA, TierData } from './app/App';
 import Tier from './Tier';
 
 interface TierListProps {

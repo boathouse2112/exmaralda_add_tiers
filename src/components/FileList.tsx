@@ -1,32 +1,24 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import FileElement from './FileElement';
+import { Directory, FileData } from './app/directory';
 
 interface FileListProps {
-  fileNames: string[]
+  directory: Directory
 }
 
-function FileList({ fileNames }: FileListProps) {
+function FileList({ directory }: FileListProps) {
 
-  /* Display up to 10 uploaded files */
-  function fileList() {
-    const FILE_LIST_MAX = 10;
-    const filesOverMax = Math.max(0, fileNames.length - FILE_LIST_MAX);
-    const displayFiles = fileNames.slice(0, FILE_LIST_MAX);
-
-    const fileElements = displayFiles.map((fileName) => <FileElement fileName={fileName} />);
-
-    if (filesOverMax > 0) {
-      fileElements.push(
+  const fileList = () => {
+    const files: ReactElement[] = [];
+    directory.forEachFile(
+      (file) => files.push(
         <li>
-          {filesOverMax}
-          {' '}
-          more ...
+          {file.path}
         </li>,
-      );
-    }
-
-    return fileElements;
-  }
+      ),
+    );
+    return files;
+  };
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import { TierData } from './App';
+import { TierData } from './app/App';
 
 type TierAttribute = 'speaker' | 'type' | 'category';
 const TIER_ATTRIBUTES: TierAttribute[] = ['speaker', 'type', 'category'];

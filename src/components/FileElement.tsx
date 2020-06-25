@@ -1,14 +1,14 @@
 import React from 'react';
+import { FileData } from './app/directory';
 
 interface FileElementProps {
-  fileName: string
+  file: FileData
 }
 
-function FileElement(props: FileElementProps) {
-  const { fileName } = props;
+function FileElement({ file }: FileElementProps) {
   return (
     <li>
-      {fileName}
+      {file.name}
     </li>
   );
 }

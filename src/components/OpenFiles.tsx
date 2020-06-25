@@ -15,6 +15,9 @@ function OpenFiles(props: OpenFilesProps) {
         <input
           type="file"
           multiple
+          // @ts-ignore
+          directory=""
+          webkitdirectory=""
           onChange={openFilesHandler}
         />
       </form>
