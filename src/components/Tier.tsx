@@ -6,7 +6,7 @@ const TIER_ATTRIBUTES: TierAttribute[] = ['speaker', 'type', 'category'];
 
 interface TierProps {
   tierData: TierData
-  updateTierData: (id:string, attribute: TierAttribute, value: string) => void
+  updateTierData: (id: string, attribute: TierAttribute, value: string) => void
   deleteTier: (id: string) => void
 }
 
@@ -23,25 +23,28 @@ function Tier({ deleteTier, tierData, updateTierData }: TierProps) {
 
   const tierAttributesHTML = TIER_ATTRIBUTES.map(
     (attribute) => (
-      <form key={`${tierData.id}-${attribute}`}>
+      <form
+        key={`${tierData.id}-${attribute}`}
+        className="tierForm"
+      >
         <label htmlFor={`${tierData.id}-${attribute}`}>
           {attribute}
-          <input
-            id={`${tierData.id}-${attribute}`}
-            type="text"
-            autoComplete="off"
-            value={tierData[attribute]}
-            onChange={handleChange}
-          />
         </label>
+        <input
+          id={`${tierData.id}-${attribute}`}
+          type="text"
+          autoComplete="off"
+          value={tierData[attribute]}
+          onChange={handleChange}
+        />
       </form>
     ),
   );
 
   return (
-    <li>
+    <li className="tier">
       {tierAttributesHTML}
-      <button type="button" onClick={() => deleteTier(tierData.id)}>
+      <button type="button" className="btn btn__danger" onClick={() => deleteTier(tierData.id)}>
         delete
       </button>
     </li>

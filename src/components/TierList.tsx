@@ -40,26 +40,31 @@ function TierList({ tiers, setTiers }: TierListProps) {
   );
 
   return (
-    <div>
+    <div className="stack-small">
       <h2>Tiers to Add</h2>
-      <button
-        type="button"
-        onClick={() => setTiers(REFERENT_ANNOTATION_TIER_DATA)}
-      >
-        referent annotation default
-      </button>
-      <button
-        type="button"
-        onClick={() => setTiers(LEFT_DISLOCATION_TIER_DATA)}
-      >
-        left dislocation default
-      </button>
-      <button
-        type="button"
-        onClick={addTier}
-      >
-        add new tier
-      </button>
+      <div className="col">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => setTiers(REFERENT_ANNOTATION_TIER_DATA)}
+        >
+          referent annotation default
+        </button>
+        <button
+          type="button"
+          className="btn"
+          onClick={() => setTiers(LEFT_DISLOCATION_TIER_DATA)}
+        >
+          left dislocation default
+        </button>
+        <button
+          type="button"
+          className="btn"
+          onClick={addTier}
+        >
+          add new tier
+        </button>
+      </div>
       <ul>
         {tierElements}
       </ul>

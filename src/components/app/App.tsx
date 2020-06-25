@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import OpenFiles from '../OpenFiles';
 import FileList from '../FileList';
 import TierList from '../TierList';
-import { useDirectory } from './useDirectory';
+import useFiles from './useFiles';
 
 export class TierData {
   id: string
@@ -48,22 +48,22 @@ export const LEFT_DISLOCATION_TIER_DATA: TierData[] = [
 
 function App() {
   const {
-    directory, openFilesHandler, addTiersAndDownload,
-  } = useDirectory();
+    files, openFilesHandler, addTiersAndDownload, deleteFiles,
+  } = useFiles();
   const [tiers, setTiers] = useState<TierData[]>(INITIAL_TIER_DATA);
 
   return (
-    <div>
+    <div className="col stack-small">
       <h1>Add Exmaralda Tiers</h1>
       <OpenFiles openFilesHandler={openFilesHandler} />
-      <div className="cols">
-        <FileList directory={directory} />
-        <button
-          type="button"
-          onClick={() => addTiersAndDownload(tiers)}
-        >
-          Add Tiers and Download
-        </button>
+      <div className="row filesTiers">
+        <div className="col">
+          <FileList
+            files={files}
+            addTiersAndDownload={() => addTiersAndDownload(tiers)}
+            deleteFiles={deleteFiles}
+          />
+        </div>
         <TierList tiers={tiers} setTiers={setTiers} />
       </div>
     </div>
