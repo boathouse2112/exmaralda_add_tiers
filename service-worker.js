@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/exmaralda_add_tiers/precache-manifest.8228df43b1a696a15466bd5857dad60d.js"
+  "/exmaralda_add_tiers/precache-manifest.3ad17906729768e62550f67f4670833d.js"
 );
 
 self.addEventListener('message', (event) => {
