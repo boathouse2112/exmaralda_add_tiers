@@ -47,15 +47,15 @@ export const LEFT_DISLOCATION_TIER_DATA: TierData[] = [
 ];
 
 export const REFERENT_FORM_TIER_DATA: TierData[] = [
-  defaultTierData('ref-form'),
-  defaultTierData('ref-mod'),
-  defaultTierData('ref-form2'),
-  defaultTierData('ref-mod2'),
-  defaultTierData('ref-form3'),
-  defaultTierData('ref-mod3'),
-  defaultTierData('ref-tracking'),
-  defaultTierData('ref-tracking2'),
-  defaultTierData('ref-tracking3'),
+  defaultTierData('ref_form1'),
+  defaultTierData('ref_mod1'),
+  defaultTierData('ref_form2'),
+  defaultTierData('ref_mod2'),
+  defaultTierData('ref_form3'),
+  defaultTierData('ref_mod3'),
+  defaultTierData('ref_tracking'),
+  defaultTierData('ref_tracking2'),
+  defaultTierData('ref_tracking3'),
 ];
 
 function App() {
