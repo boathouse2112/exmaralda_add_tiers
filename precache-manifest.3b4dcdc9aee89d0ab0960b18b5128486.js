@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "252976fe98132cb40fbb212f868bf465",
+    "revision": "0cff38b678a61fdfa92c963afe5d8d28",
     "url": "/exmaralda_add_tiers/index.html"
   },
   {
-    "revision": "9f768f1e1e15c8e56e71",
+    "revision": "6b970fbeb7d9e4edcab4",
     "url": "/exmaralda_add_tiers/static/css/main.5af25955.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/exmaralda_add_tiers/static/js/2.9165d5e7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9f768f1e1e15c8e56e71",
-    "url": "/exmaralda_add_tiers/static/js/main.17f1d726.chunk.js"
+    "revision": "6b970fbeb7d9e4edcab4",
+    "url": "/exmaralda_add_tiers/static/js/main.149ed7bb.chunk.js"
   },
   {
     "revision": "a3c96c8a91d3e2e25067",
