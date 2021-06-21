@@ -46,6 +46,18 @@ export const LEFT_DISLOCATION_TIER_DATA: TierData[] = [
   defaultTierData('ld_intervening'),
 ];
 
+export const REFERENT_FORM_TIER_DATA: TierData[] = [
+  defaultTierData('ref-form'),
+  defaultTierData('ref-mod'),
+  defaultTierData('ref-form2'),
+  defaultTierData('ref-mod2'),
+  defaultTierData('ref-form3'),
+  defaultTierData('ref-mod3'),
+  defaultTierData('ref-tracking'),
+  defaultTierData('ref-tracking2'),
+  defaultTierData('ref-tracking3'),
+];
+
 function App() {
   const {
     files, openFilesHandler, addTiersAndDownload, deleteFiles,

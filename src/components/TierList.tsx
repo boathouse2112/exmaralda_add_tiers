@@ -1,5 +1,5 @@
 import React from 'react';
-import { LEFT_DISLOCATION_TIER_DATA, REFERENT_ANNOTATION_TIER_DATA, TierData } from './app/App';
+import { LEFT_DISLOCATION_TIER_DATA, REFERENT_ANNOTATION_TIER_DATA, REFERENT_FORM_TIER_DATA, TierData } from './app/App';
 import Tier from './Tier';
 
 interface TierListProps {
@@ -56,6 +56,13 @@ function TierList({ tiers, setTiers }: TierListProps) {
           onClick={() => setTiers(LEFT_DISLOCATION_TIER_DATA)}
         >
           left dislocation default
+        </button>
+        <button
+          type="button"
+          className="btn"
+          onClick={() => setTiers(REFERENT_FORM_TIER_DATA)}
+        >
+          Referent form annotation default
         </button>
         <button
           type="button"
