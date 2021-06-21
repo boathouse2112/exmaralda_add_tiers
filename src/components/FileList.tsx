@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import { FileData } from './app/directory';
 import { nanoid } from 'nanoid';
+import { FileData } from './app/directory';
 
 interface FileListProps {
   files: FileData[]

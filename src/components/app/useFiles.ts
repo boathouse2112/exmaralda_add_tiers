@@ -52,7 +52,7 @@ function useFiles() {
     }
 
     const tiersTemplate = tiers.map(
-      (tier, tierIdx) => tierTemplate(tier, 200 + tierIdx),
+      (tier, tierIdx) => tierTemplate(tier, 300 + tierIdx),
     )
       .concat(['</basic-body>'])
       .join('\n');
